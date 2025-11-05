@@ -1,0 +1,28 @@
+{% extends "_baseLayout.html" %}
+
+{% block body %}
+  <main class="container">
+    <article>
+      <header>
+        <h1>🚫 Message Not Found</h1>
+      </header>
+
+      <section>
+        <p>
+          The message you're looking for doesn't exist or has already been read
+          and destroyed.
+        </p>
+
+        <strong>Possible reasons:</strong>
+        <ul>
+          <li>The message has already been viewed and automatically deleted</li>
+          <li>The link is invalid or corrupted</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p><a href="/create">Create a new burn message</a></p>
+      </footer>
+    </article>
+  </main>
+{% endblock %}

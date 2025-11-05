@@ -1,0 +1,31 @@
+{% extends "_baseLayout.html" %}
+
+{% block body %}
+  <main class="container">
+    <article>
+      <header>
+        <h1>🔥 Burn Message 🔥</h1>
+        <p>⚠️ Warning: This message will be destroyed after you read it!</p>
+      </header>
+
+      <section>
+        <div
+          style="background-color: var(--pico-card-background-color); padding: 2rem; border-radius: var(--pico-border-radius); margin: 2rem 0; border-left: 4px solid var(--pico-primary);"
+        >
+          <p style="white-space: pre-wrap; font-size: 1.1em; line-height: 1.6;">
+            {{ message }}
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          <small>
+            🔥 This message has been permanently deleted from our servers.
+          </small>
+        </p>
+        <p><a href="/create">Create your own burn message</a></p>
+      </footer>
+    </article>
+  </main>
+{% endblock %}

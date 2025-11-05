@@ -1,0 +1,37 @@
+{% extends "_baseLayout.html" %}
+
+{% block body %}
+  <main class="container">
+    <article>
+      <header>
+        <h1>🔥 Burn on Read 🔥</h1>
+        <p>
+          Create a secure message that will be destroyed after being read once.
+        </p>
+      </header>
+
+      {% if error %}
+        <div class="warning"><strong>Error:</strong> {{ error }}</div>
+      {% endif %}
+
+      <form method="POST" action="/create">
+        <fieldset>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Enter your message here..."
+            rows="6"
+            required
+            maxlength="2000"
+          ></textarea>
+          <small
+            >Maximum 2000 characters. Message will be permanently deleted after
+            being read.</small
+          >
+        </fieldset>
+
+        <button type="submit" class="contrast">Create Burn Message</button>
+      </form>
+    </article>
+  </main>
+{% endblock %}

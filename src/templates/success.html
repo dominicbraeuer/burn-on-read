@@ -1,0 +1,64 @@
+{% extends "_baseLayout.html" %}
+
+{% block body %}
+  <main class="container">
+    <article>
+      <header>
+        <h1>✅ Message Created!</h1>
+        <p>Your burn-on-read message has been created successfully.</p>
+      </header>
+
+      <section>
+        <section class="message-link-section">
+          <div class="message-link-container">
+            <code id="messageLink" style="word-break: break-all;"
+              >{{ protocol }}://{{ host }}/message/{{ messageId }}</code
+            >
+          </div>
+
+          <button onclick="copyToClipboard()" class="secondary copy-button">
+            Copy Link
+          </button>
+        </section>
+
+        <section>
+          <strong>Security Information</strong>
+          <ul>
+            <li>This message can only be read <strong>once</strong></li>
+            <li>After viewing, the message is permanently deleted</li>
+            <li>The link expires and becomes invalid after use</li>
+            <li>
+              Keep this link secure - anyone with access can read the message
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <footer>
+        <p><a href="/create">Create another message</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    function copyToClipboard() {
+      const linkText = document.getElementById("messageLink").textContent;
+      navigator.clipboard.writeText(linkText).then(
+        function () {
+          alert("Link copied to clipboard!");
+        },
+        function (err) {
+          console.error("Could not copy text: ", err);
+          // Fallback for older browsers
+          const textArea = document.createElement("textarea");
+          textArea.value = linkText;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+          alert("Link copied to clipboard!");
+        },
+      );
+    }
+  </script>
+{% endblock %}
