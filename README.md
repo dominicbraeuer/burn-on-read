@@ -207,29 +207,6 @@ curl -X POST http://localhost:3000/create \
 4. Push to branch: `git push origin feature/new-feature`
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the ISC License.
-
-## 🆘 Support
-
-For issues and questions:
-
-1. Check the logs in `logs/logs.txt`
-2. Verify file permissions for `burn-messages/` directory
-3. Ensure all dependencies are properly installed
-4. Check console output for error messages
-
-## 🔮 Future Enhancements
-
-- [ ] Message expiration time limits
-- [ ] Password-protected messages
-- [ ] File upload support
-- [ ] API rate limiting
-- [ ] Database storage option
-- [ ] Message preview without burning
-- [ ] Custom message destruction animations
-
 ---
 
 **⚠️ Remember: Once a message is burned, it's gone forever!** 🔥
